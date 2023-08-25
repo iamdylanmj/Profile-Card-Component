@@ -1,0 +1,147 @@
+@forward "./global/";
+
+body {
+  background-color: var(--Dark-cyan);
+  background-image: url("../images/bg-pattern-top.svg"),
+    url("../images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-size: 1200px 1200px, 1200px 1200px;
+  background-position: -150% 150%, 160% -120%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 375px) {
+    background-position: 220% -80%, -170% 170%;
+    background-size: 450px 450px, 450px 450px;
+  }
+}
+
+// main container
+.main-cont {
+  background-color: var(--White);
+  width: 400px;
+  height: 400px;
+  overflow: hidden;
+  box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+    rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+  border-radius: 15px;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  -ms-border-radius: 15px;
+  -o-border-radius: 15px;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+
+  @media (max-width: 375px) {
+    width: 300px;
+    margin: 0 20px;
+  }
+  // background image goes here
+  &__bg {
+    background-image: url("../images/bg-pattern-card.svg");
+    height: 140px;
+    width: 100%;
+  }
+  // avatar image goes here
+  &__avtr {
+    background-image: url("../images/image-victor.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    border: 5px solid var(--White);
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    position: absolute;
+    left: 50%;
+    top: 21%;
+    transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+  }
+
+  // personel information section
+  &__desc {
+    width: 100%;
+    height: 150px;
+    border-bottom: 1px solid var(--Dark-gray-light);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    // name and age
+    &-name {
+      margin-top: 40px;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--Very-dark-desaturated-blue);
+      &-age {
+        margin-left: 8px;
+        font-weight: 400;
+        color: var(--Dark-grayish-blue);
+      }
+    }
+
+    // city name
+    &-city {
+      margin-top: 10px;
+      font-weight: 400;
+      color: var(--Dark-grayish-blue);
+    }
+  }
+
+  // status section
+  &__status {
+    height: 80px;
+    width: 90%;
+    list-style: none;
+    flex: 1;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin-inline-start: auto;
+    margin-inline-end: auto;
+
+    li {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--Very-dark-desaturated-blue);
+      span {
+        margin-top: 8px;
+        font-weight: 400;
+        font-size: 0.8rem;
+        color: var(--Dark-grayish-blue);
+        letter-spacing: 0.1rem;
+      }
+    }
+  }
+}
+
+// developer information section
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 5px;
+  .attribution a {
+    color: hsl(228, 45%, 44%);
+  }
+}
